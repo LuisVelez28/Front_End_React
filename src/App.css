@@ -1,14 +1,12 @@
-.carta {
-    background-image: url('https://cdn-cashy-static-assets.lucidchart.com/marketing/blog/2020Q3/sales/how-to-improve-buyer-experience-part-1.png');
-    background-size: auto;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.texto1 {
+.textoPincipal {
     font-weight: 500;
     font-family: inherit;
-    color: black;
+    color: rgb(2, 2, 2);
     text-align: center;
-    font-size: 64px;
+    font-size: 32px;
+}
+
+.imagen1{
+    width: 50%;
+    height: 50%;
 }
