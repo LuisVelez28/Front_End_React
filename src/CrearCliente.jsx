@@ -14,18 +14,18 @@ const CrearCliente = () => {
             telefono: telefono
         };
 
-        fetch('http://127.0.0.1:8000/api/countries/', {
+        fetch('http://127.0.0.1:8000/api/clientes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(countryData)
+            body: JSON.stringify(cliente)
         })
             .then(response => response.json())
             .then(data => {
-                console.log('País creado exitosamente:', data);
+                console.log('Cliente creado exitosamente:', data);
             })
-            .catch(error => console.error('Error al crear el país:', error));
+            .catch(error => console.error('Error al crear el cliente:', error));
 
         setNombre('');
         setCedula('');

@@ -4,14 +4,14 @@ const ClientesList = () => {
     const [clientes, setClientes] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/clientes')
+        fetch('http://127.0.0.1:8000/api/clientes')
             .then(res => res.json())
             .then(data => setClientes(data))
             .catch(error => console.log(error))
     }, []);
 
     const handleDelete = (id) => {
-        fetch(`http://127.0.0.1:8000/api/countries/${id}`, {
+        fetch(`http://127.0.0.1:8000/api/clientes/${id}`, {
             method: 'DELETE'
         })
             .then(response => response.json())
@@ -30,12 +30,10 @@ const ClientesList = () => {
             {clientes.map(cliente => (
                 <div key={cliente.id}>
                     <div>
-                        <p>Nombre del cliente: {cliente.nombre}</p>
-                        <p>Cedula del cliente: {cliente.cliente}</p>
-                        <p>Telefono del cliente: {cliente.telefono}</p>
+                            <p><b>Nombre del cliente: </b>{cliente.nombre}</p>
+                            <p><b>Cedula del cliente: </b>{cliente.cedula}</p>
+                            <p><b>Telefono del cliente: </b>{cliente.telefono}</p>
                     </div>
-                    <button onClick={() => handleDelete(country.id)} className='btn btn-danger btn-sm mt-4'>Eliminar</button>
-                <hr />
             </div>
             ))}
         </div>
