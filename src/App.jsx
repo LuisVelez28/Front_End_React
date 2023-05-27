@@ -1,11 +1,11 @@
 function App() {
   return (
     <>
-      <main role="main-home-wrapper" class="container">
+      <main role="main-home-wrapper" className="container">
 
-        <div class="row">
+        <div className="row">
 
-          <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
+          <section className="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
             <article role="pge-title-content">
               <header>
                 <h2 className="textoPincipal">Clientes</h2>
@@ -22,7 +22,7 @@ function App() {
                 que nos eligen de vez en cuando, queremos recordarles lo especiales que son para nosotros.</p>
             </article>
           </section>
-          <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
+          <section className="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
             <article role="pge-title-content">
               <header>
                 <h2 className="textoPincipal">Servicios</h2>

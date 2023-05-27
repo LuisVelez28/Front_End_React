@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ClientesList = () => {
     const [clientes, setClientes] = useState([]);
@@ -11,17 +12,27 @@ const ClientesList = () => {
     }, []);
 
     const handleDelete = (id) => {
+        console.log("xxxx", id);
         fetch(`http://127.0.0.1:8000/api/clientes/${id}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                // Otros encabezados si son necesarios
+            },
+            // Puedes incluir el cuerpo de la solicitud si es necesario
+            // body: JSON.stringify(data),
         })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
+            .then(response => {
+                if (response.ok) {
+                    // Si la respuesta es exitosa, puedes realizar acciones adicionales aquí
+                    console.log('Cliente eliminado correctamente');
                 } else {
-                    console.error('Error al eliminar el país:', data.error);
+                    throw new Error('Error al eliminar el cliente');
                 }
             })
-            .catch(error => console.error('Error al realizar la llamada a la API:', error));
+            .catch(error => {
+                console.error('Error en la solicitud DELETE:', error);
+            });
     };
 
     return (
@@ -30,11 +41,15 @@ const ClientesList = () => {
             {clientes.map(cliente => (
                 <div key={cliente.id}>
                     <div>
-                            <p><b>Nombre del cliente: </b>{cliente.nombre}</p>
-                            <p><b>Cedula del cliente: </b>{cliente.cedula}</p>
-                            <p><b>Telefono del cliente: </b>{cliente.telefono}</p>
+                        <p><b>Nombre del cliente: </b>{cliente.nombre}</p>
+                        <p><b>Cedula del cliente: </b>{cliente.cedula}</p>
+                        <p><b>Telefono del cliente: </b>{cliente.telefono}</p>
                     </div>
-            </div>
+                    <button onClick={() => handleDelete(cliente.id)}>Eliminar</button>
+                    <Link to='/clientes/editar' state={cliente}>
+                        <button>Editar</button>
+                    </Link>
+                </div>
             ))}
         </div>
     );
