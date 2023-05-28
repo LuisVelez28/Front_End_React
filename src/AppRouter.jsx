@@ -1,34 +1,22 @@
-import { useEffect, useState } from 'react';
-import { Routes, Route, useParams, Navigate } from 'react-router-dom';
-import PanelAdmin from './pages/PanelAdmin';
-import PanelCliente from './pages/PanelCliente';
-import ClientesList from './ClientesList';
+import { Routes, Route } from 'react-router-dom';
+import IndexHub from './templates/IndexHub';
+import Index from './pages/Index';
+import RutasyHorarios from './pages/RutasyHorarios';
 
 const AppRouter = () => {
-    const [isAdmin, setIsAdmin] = useState(true);
 
-    // const { variableValue } = useParams();
-
-    // useEffect(() => {
-    //     // Actualizamos el estado de la variable cuando cambia el valor del parámetro
-    //     setIsAdmin(variableValue);
-    // }, [variableValue]);
 
     return (
         <>
             
             <Routes>
-                <Route exact path="/PanelAdmin" element={<PanelAdmin />} />
-                <Route path="/PanelCliente" element={<PanelCliente />} />
+                <Route exact path="/" element={<IndexHub />}>
+                    <Route index path="/" element={<Index />} /> 
+                    <Route path="/RutasyHorarios" element={<RutasyHorarios />} />
+                </Route>
 
-                {/* <Route path="/pages/PanelAdmin/Clientes" element={<ClientesList />} /> */}
 
             </Routes>
-            {isAdmin ? (
-                <Navigate to="/PanelAdmin" replace={true} />
-            ) : (
-                <Navigate to="/PanelCliente" replace={true} />
-            )}
 
         </>
     )
