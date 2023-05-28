@@ -198,31 +198,31 @@ footer {
 /*Conocernos CSS*/
 
 #DivMision {
-	background-image: url(../imagenes/img/Mision.gif);
+	background-image: url(../assets/imgs/Mision.gif);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 #DivPolitica {
-	background-image: url(../imagenes/img/Politica.gif);
+	background-image: url(../assets/imgs/Politica.gif);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 #DivValores {
-	background-image: url(../imagenes/img/Valores.gif);
+	background-image: url(../assets/imgs/Valores.gif);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 #DivVision {
-	background-image: url(../imagenes/img/Vision2.gif);
+	background-image: url(../assets/imgs/Vision2.gif);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 #DivHistoria {
-	background-image: url(../imagenes/img/Historia.gif);
+	background-image: url(../assets/imgs/Historia.gif);
 	background-repeat: no-repeat;
 	background-size: cover;
 }

@@ -1,4 +1,4 @@
-import "../assets/js/rutes"
+// import "../assets/js/rutes"
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const RutasyHorarios = () => {
