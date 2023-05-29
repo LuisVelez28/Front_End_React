@@ -31,8 +31,8 @@ const Header = () => {
                                 </li>
                             </ul>
                             <div>
-                                <Link className="btn btn-light" to="/Login">Registrarse</Link>
-                                <Link className="btn btn-primary" to="/Register">Iniciar Sesion</Link>
+                                <Link className="btn btn-light" to="/Register">Registrarse</Link>
+                                <Link className="btn btn-primary" to="/Panel">Iniciar Sesion</Link>
                             </div>
                         </div>
                     </div>
